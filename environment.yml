@@ -1,0 +1,17 @@
+name: small_rna_seq_env
+channels:
+   - conda-forge
+   - bioconda
+   - defaults
+dependencies:
+   - bowtie=1.3.1
+   - cutadapt=4.9
+   - fastqc=0.12.1
+   - multiqc=1.17
+   - perl=5.32.1
+   - python=3.8.20
+   - perl-set-intervaltree
+   - r-base=4.2.3
+   - bioconductor-biostrings
+   - samtools=1.6
+        

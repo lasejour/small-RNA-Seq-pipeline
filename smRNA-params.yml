@@ -1,0 +1,31 @@
+# ============================================================
+# small RNA-Seq pipeline — run parameters
+# Usage: nextflow run small_RNA-Seq-Pipeline-v1.nf -profile local -params-file params.yml
+# ============================================================
+# library-prep
+prep: "single-end"                        # "paired-end" or "single-end"
+# ------------------------------------------------------------
+# Output
+# ------------------------------------------------------------
+output: "results"
+# ------------------------------------------------------------
+# supplementary scripts/tools
+# DNApi
+dnapi_file: "/data/resources/tools/DNApi/dnapi.py"
+
+# r-script to convert txt file to fasta
+txt2fasta_file: "${projectDir}/bin/adapter_txt2fasta.R"
+
+# manatee executable file
+manatee_file: "/data/resources/tools/Manatee/manatee"
+
+# ------------------------------------------------------------
+# tool helpers
+multiqc_config: "${projectDir}/bin/multiqc_config.yaml"
+# ------------------------------------------------------------
+# Genome indices and annotations
+primary_assembly: "/data/resources/genomes/GRCh38/ENS.98/ENS_98/Sequence/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+bowtie_genome_index: "/data/resources/genomes/Bowtie/B1_GRch38/B1_GRch38"
+nc_annotation: "/data/resources/tools/Manatee/annotation/ncRNA_human_v1.gtf"
+transcriptome_index: "/data/resources/genomes/MANATEE/trans-index/ncRNA_human.gtf"
+# ------------------------------------------------------------
